@@ -43,9 +43,9 @@ app.post("/ngrok-admin/register", (req, res) => {
   fs.writeFileSync("./licenses.json", licenses);
   res.json({ code: 200, status: "OK", data: { license } });
 });
-app.use("/", (req, res) => {
-  const { method, headers, url: path, body } = req;
-  const { license } = headers;
+app.use("/:license", (req, res) => {
+  const { method, headers, params, url: path, body } = req;
+  const { license } = params;
   const time = new Date().getTime();
   if (!license)
     return res.json({

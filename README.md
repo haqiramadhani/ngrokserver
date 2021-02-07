@@ -32,7 +32,6 @@ npm start
 - Endpoint : `/ngrok-admin/register`
 - Method : `POST`
 - Headers :
-  - License : `String`
   - Content-Type : `application/json`
     
 - Body :
@@ -44,7 +43,5 @@ npm start
 ```
 
 ### 2. Forwarding
-- Endpoint : `ALL`
-- Method : `ALL`
-- Headers :
-  - License : `String`
+- Endpoint : `/:license/*`
+- Method : `*`
