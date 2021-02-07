@@ -69,6 +69,18 @@ app.use("/:license", (req, res) => {
   io.emit("request", data);
   RESPONSE_STORE[data.time] = res;
 });
+app.get("/", (req, res) => {
+  res.send(`
+  <html>
+  <head>
+      <title>Ngrok Server NodeJS</title>
+  </head>
+  <body>
+    <h1>Welcome to Ngrok Server With NodeJS</h1>
+  </body>
+  </html>
+  `);
+});
 
 server.listen(PORT || "8080", () => {
   console.log(`Server running on port ${PORT || 8080}!`);
